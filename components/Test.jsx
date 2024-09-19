@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const slotMachine = () => {
+export const Test = () => {
   return (
     <div>
         <h1>Hello World</h1>
