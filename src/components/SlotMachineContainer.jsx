@@ -1,5 +1,5 @@
 import React from 'react'
-import SlotMachine from './SlotMachine';
+import SlotMachine from './SlotMachine.jsx';
 import '../styles/SlotMachineContainer.css'
 import PokerChip1 from '../utils/poker-chip (1).png';
 import PokerChip2 from '../utils/casinoChip2.png';
@@ -12,9 +12,7 @@ const SlotMachineContainer = () => {
       <div className="overlay"></div>
 
       <CasinoKumoriBanner />
-
       <SlotMachine />
-
       <FooterLogos />
 
       {/* Floating Chips */}
