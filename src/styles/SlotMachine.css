@@ -16,70 +16,33 @@
   font-size: 1.6rem;
   border: none;
 }
-#board{
-  
- width:200px;
- margin-left:30% ;
- margin-bottom: 50px;
- margin-top: -75px;
+
+html, body {
+  height: 100%;
 }
 
-#main-container{
-  /* background-image: url('https://elements-resized.envatousercontent.com/elements-cover-images/0872f94b-263a-434e-be4d-b830d218db6b?w=2038&cf_fit=scale-down&q=85&format=auto&s=7c0e8ef715659e55173d2c661b0e8b6bd20d48b4a8dc0da3cbd6298caadc62cc'); */
-  /* background-size: cover; /* Ensures the background image covers the entire area */
-  /* background-position: center;
-  background-repeat: no-repeat;  */
-  width: 100%;
-  height: 100vh;
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
+  /* background: linear-gradient(45deg, purple 0%, rgb(4, 190, 237) 100%); */
 }
 
 .slots {
-  display: flex;
-  justify-content:center;
-  align-items: center; 
-  /* /* padding: calc(0.3* var(--icon-width)); */
-   
-  /* background: linear-gradient(45deg, yellow 0%, lightgray 100%); */
   position: relative;
-  width: calc(4 * var(--icon-width));  
-  height: calc(2 * var(--icon-height)); 
-  padding: 80px 30px 100px 30px;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5) 0%, rgba(211, 211, 211, 0.5) 100%);
-  border: 7px solid rgb(255, 228, 76);
-  border-radius: 20px;
-
-  /* border-top: 1px solid rgba(255, 255, 255, 0.6);
-  border-right: 1px solid rgba(255, 255, 255, 0.6); */
-
+  /* width: calc(3.5 * var(--icon-width)); 
+  height: calc(3 * var(--icon-height));  */
+  display: flex;
+  justify-content: space-between;
+  /* padding: calc(0.3 * var(--icon-width)); */
+  background: linear-gradient(45deg, grey 0%, lightgray 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
   /* border-left: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3); */
-  border-radius: 20px;
-  margin-top:-50px;
-
+  border-radius: 3px;
 }
-#reset{
-  position: absolute;
-  top:3%;
-  right:3%;
-  font-size: 18px;
-  padding:10px 30px;
-  border-radius: 10px;
-  border:none;
-  background-color: rgb(4, 197, 251);
-  color: white;
-}
-#roll:active {
-  background-color: rgb(3, 114, 3); /* Darker blue on click */
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-
 
 .slots::before, 
 .slots::after {
@@ -132,32 +95,19 @@
 }
 
 .reel {
+  border: 2px solid red;
   position: relative;
-  top:2%;
   width: var(--icon-width);
-  height: calc(3* var(--icon-height));
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  /* border-radius: 3px; */
+  /* width:200px; */
+  height: calc(3 * var(--icon-height));
+  /* height: 300px; */
+  /* border: 1px solid rgba(0, 0, 0, 0.3); */
+  border-radius: 3px;
   overflow: hidden;
-  background-image: url("../utils/reel_strip\(1\)\(1\).png");
-  background-position:top;
+  background-image: url(https://assets.codepen.io/439000/slotreel.webp);
+  background-position: center;
   background-repeat: repeat-y;
-  background-size:cover;
-  /* margin: 10px; */
-}
-.reel{
-  border-top: 7px solid rgb(255, 228, 76);
-  border-bottom: 7px solid rgb(255, 228, 76);
-}
-.slots div:nth-child(1){
-  border-left: 7px solid rgb(255, 228, 76);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-.slots div:nth-child(3){
-  border-right: 7px solid rgb(255, 228, 76);
-  border-top-right-radius: 20px ;
-  border-bottom-right-radius: 20px;
+  background-size: cover;
 }
 
 
@@ -166,8 +116,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 0%;
-  height: 0%;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.4) 100%);
   box-shadow: inset 0 0 6px 2px rgba(0, 0, 0, 0.3);
 }
@@ -188,23 +138,3 @@
   font-weight: 700;
 } */
  
-
-#roll{
-  position: relative;
-  font-size: 26px;
-  padding:10px 40px;
-  border-radius: 10px;
-  border:none;
-  margin-top: 20px;
-  background-color: rgb(8, 198, 8);
-  color: white;
-  margin-left: 30%;
-  margin-top:-20% ;
-  z-index: 1;
-  transition: 
-  background-color 0.3s ease, 
-  box-shadow 0.1s ease-in-out, 
-  transform 0.1s ease-in-out;
-
-  
-}
