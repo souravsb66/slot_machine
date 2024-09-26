@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './SlotMachine.css'; // Import your CSS for styling
+import '../styles/SlotMachine.css';
 
 const SlotMachine = () => {
     const [indexes, setIndexes] = useState([0, 0, 0]);

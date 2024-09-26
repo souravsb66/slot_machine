@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, purple 0%, rgb(4, 190, 237) 100%);
+  /* background: linear-gradient(45deg, purple 0%, rgb(4, 190, 237) 100%); */
 }
 
 .slots {
