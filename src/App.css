@@ -1,3 +1,80 @@
 .App {
     align-items: center;background: linear-gradient(to bottom, skyblue, royalblue, black);
+
 }
+
+
+
+.starburst-background {
+  position:absolute;
+  top:-30%;
+  /* bottom: 50%; */
+  /* Adjust to keep centered */
+   /* Adjust to keep centered */
+  z-index: 0;
+  width: 100vw; /* 80% of the viewport width */
+  height: 70vh; /* 80% of the viewport height */
+  /* Add radial gradient to blend the starburst edges */
+  background: radial-gradient(circle, 
+    rgba(0, 187, 255, 0.7) 0%, 
+    rgba(0, 187, 255, 0) 90%), /* Adjust the transparency and position for a smoother blend */
+  conic-gradient(from 0deg, 
+    skyblue 0%,  
+    royalblue 2%, 
+    skyblue 4%,  
+    royalblue 6%, 
+    skyblue 8%,  
+    royalblue 10%, 
+    skyblue 12%,  
+    royalblue 14%, 
+    skyblue 16%, 
+    royalblue 18%, 
+    skyblue 20%, 
+    royalblue 22%, 
+    skyblue 24%, 
+    royalblue 26%, 
+    skyblue 28%, 
+    royalblue 30%, 
+    skyblue 32%, 
+    royalblue 34%, 
+    skyblue 36%, 
+    royalblue 38%, 
+    skyblue 40%, 
+    royalblue 42%, 
+    skyblue 44%, 
+    royalblue 46%, 
+    skyblue 48%, 
+    royalblue 50%, 
+    skyblue 52%, 
+    royalblue 54%, 
+    skyblue 56%, 
+    royalblue 58%, 
+    skyblue 60%, 
+    royalblue 62%, 
+    skyblue 64%, 
+    royalblue 66%, 
+    skyblue 68%, 
+    royalblue 70%, 
+    skyblue 72%, 
+    royalblue 74%, 
+    skyblue 76%, 
+    royalblue 78%, 
+    skyblue 80%, 
+    royalblue 82%, 
+    skyblue 84%, 
+    royalblue 86%, 
+    skyblue 88%, 
+    royalblue 90%, 
+    skyblue 92%, 
+    royalblue 94%, 
+    skyblue 96%, 
+    royalblue 98%, 
+    skyblue 100%);
+  
+  background-size: cover;
+  overflow: visible; 
+  
+
+  
+}
+
