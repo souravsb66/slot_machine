@@ -1,13 +1,14 @@
 import React from "react";
 import '../styles/SlotMachineContainer.css';
 import Servicenow from '../utils/servicenow_logo.png';
+import KumoriLogo from '../utils/White logo - no background.png'
 
 const FooterLogos = () => {
   return (
     <div className="logo-container">
       <div>
         <img
-          src="https://kumoritechnologies.com/wp-content/uploads/2024/03/kumori-logo-1.png"
+          src={KumoriLogo}
           alt="Logo 1"
         />
       </div>
@@ -19,7 +20,7 @@ const FooterLogos = () => {
       </div>
       <div>
         <img
-          src="https://kumoritechnologies.com/wp-content/uploads/2024/03/kumori-logo-1.png"
+          src={KumoriLogo}
           alt="Logo 3"
         />
       </div>
