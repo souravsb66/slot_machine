@@ -1,8 +1,8 @@
 .casino-box {
     position: relative;
     width: 400px;
-    height: 140px;
-    background-color: #ffffff; /* White background for the box */
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.6); /* White background for the box */
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
   }
   
   .casino-logo {
-    width: 250px; /* Size of the logo */
+    width: 210px; /* Size of the logo */
   }
   
   .casino-box::before {

@@ -7,6 +7,12 @@ import FooterLogos from './FooterLogos';
 import CasinoKumoriBanner from './CasinoKumoriBanner';
 
 const SlotMachineContainer = () => {
+
+  // Function to reload the slot machine
+  const reloadMachine = () => {
+    window.location.reload();
+  };
+    
   return (
     <div className="slot-machine-container">
       <div className="overlay"></div>
@@ -20,6 +26,9 @@ const SlotMachineContainer = () => {
       <img className="chips chip2" src={PokerChip2} alt="Chip Icon" />
       <img className="chips chip3" src={PokerChip1} alt="Chip Icon" />
       <img className="chips chip4" src={PokerChip2} alt="Chip Icon" />
+
+      
+      <button onClick={reloadMachine} id="reset">Reset</button>
 
     </div>
   )

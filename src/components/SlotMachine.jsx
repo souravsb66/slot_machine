@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import '../styles/SlotMachine.css'
-import sound from "../utils/mixkit-slot-machine-wheel-1932.wav";
-import sound1 from "../utils/game-music-loop-3-144252.mp3";
-import sound2 from "../utils/short-game-music-loop-38898.mp3";
-import sound3 from "../utils/drum-roll-please-6386.mp3";
- 
+import sound3 from "../utils/DRUM ROLL SOUND EFFECT Awarding.mp3";
 import errorsound from "../utils/buzzer-or-wrong-answer-20582.mp3"
 import winsound from "../utils/winning-218995.mp3"
+import loseSound from "../utils/Lose Sound.mp3"
+import buttonClick from "../utils/Spin Button Click Sound.mp3"
+ 
+ 
 const SlotMachine = () => {
     const [indexes, setIndexes] = useState([0, 0, 0]);
-    const [attempts, setAttempts] = useState(0); // Counter for attempts
-    const [wins, setWins] = useState(0); // Counter for wins
-    const [rollCount, setRollCount] = useState(0); // Track how many rolls have been made
+    const [rollCount, setRollCount] = useState(0);
     const [nextWinningRoll, setNextWinningRoll] = useState(Math.floor(Math.random() * 10) + 1); // Randomize the winning roll in a set of 10
- 
+    const [isDisabled, setIsDisabled] = useState(false)
     const iconWidth = 118.5;
     const iconHeight = 118.5;
     const numIcons = 9;
@@ -38,6 +36,7 @@ const SlotMachine = () => {
             const normTargetBackgroundPositionY = targetBackgroundPositionY % (numIcons * iconHeight);
  
             const audio = new Audio(sound3);
+           
             audio.loop = true; // Loop the sound while spinning
             audio.play();
  
@@ -57,81 +56,69 @@ const SlotMachine = () => {
         });
     };
  
-    // Function to roll all reels
+   
+   
     const rollAll = () => {
-        // setRollCount((prevRollCount) => {
-        //     const newRollCount = prevRollCount + 1;
-        //     return newRollCount;
-        // });
- 
-        setAttempts((prevAttempts) => prevAttempts + 1); // Increment attempts on each roll
- 
-        const reelsList = document.querySelectorAll('.reel');
- 
-        setRollCount((prevRollCount) => {
-            // Check if the current roll is the winning roll
-            const isWinningRoll = prevRollCount + 1 === nextWinningRoll; // Winning condition for this roll
-            const targets = isWinningRoll ? [1, 1, 1] : null; // Target 7-7-7 for winning roll (index 1 for "seven")
- 
-            Promise.all([...reelsList].map((reel, i) => roll(reel, i, targets ? targets[i] : null)))
-                .then((deltas) => {
-                    const newIndexes = indexes.map((index, i) => (index + deltas[i]) % numIcons);
-                    setIndexes(newIndexes);
- 
-                    // Check win condition for 7-7-7
-                    if (newIndexes[0] === newIndexes[1] && newIndexes[1] === newIndexes[2]) {
-                        const slots = document.querySelector(".slots");
-                        if (slots) {
-                            slots.classList.add("win2");
-                            setTimeout(() => slots.classList.remove("win2"), 2000);
-                        }
-                        setWins((prevWins) => prevWins + 1); // Increment wins counter if win happens
-                        const winAudio = new Audio(winsound);
-                        winAudio.play();
-                    }
-                        else {
+        const buttonClicked = new Audio(buttonClick);
+        buttonClicked.play(); // Play the button click sound
+        setIsDisabled(true); // Disable the button initially
+   
+        // Use a short timeout to ensure the audio plays before starting the roll
+        setTimeout(() => {
+            const reelsList = document.querySelectorAll('.reel');
+   
+            setRollCount((prevRollCount) => {
+                const isWinningRoll = prevRollCount + 1 === nextWinningRoll; // Winning condition for this roll
+                const targets = isWinningRoll ? [1, 1, 1] : null; // Target 7-7-7 for winning roll (index 1 for "seven")
+   
+                Promise.all([...reelsList].map((reel, i) => roll(reel, i, targets ? targets[i] : null)))
+                    .then((deltas) => {
+                        const newIndexes = indexes.map((index, i) => (index + deltas[i]) % numIcons);
+                        setIndexes(newIndexes);
+   
+                        // Check win condition for index 1
+                        if (newIndexes[1] === 1 && newIndexes[0] === 1 && newIndexes[2] === 1) {
+                            const slots = document.querySelector(".slots");
+                            if (slots) {
+                                slots.classList.add("win2");
+                                setTimeout(() => slots.classList.remove("win2"), 2000);
+                            }
+                            const winAudio = new Audio(winsound);
+                           
+                            winAudio.play();
+                        } else {
                             // Play lose sound
-                            const loseAudio = new Audio(errorsound);
+                            const loseAudio = new Audio(loseSound);
                             loseAudio.play();
-                       
-                    }
- 
-                    // Reset after 10 rolls
-                    if ((prevRollCount + 1) % 10 === 0) {
-                        setNextWinningRoll(Math.floor(Math.random() * 10) + 1); // Randomize the next winning roll
-                        setRollCount(0); // Reset roll count after every 10 rolls
-                    }
-                });
- 
-            return prevRollCount + 1; // Ensure rollCount is incremented after processing
-        });
+                        }
+   
+                        // Reset after 10 rolls
+                        if ((prevRollCount + 1) % 10 === 0) {
+                            setNextWinningRoll(Math.floor(Math.random() * 10) + 1); // Randomize the next winning roll
+                            setRollCount(0); // Reset roll count after every 10 rolls
+                        }
+   
+                        // Enable the button after processing
+                        setIsDisabled(false); // Re-enable the button after rolls complete
+                    });
+   
+                return prevRollCount + 1; // Ensure rollCount is incremented after processing
+            });
+        },1000); // Adjust the timeout duration as necessary (200ms is just an example)
     };
  
-    // Function to reload the slot machine
-    const reloadMachine = () => {
-        window.location.reload();
-    };
+   
  
     return (
-        <div id="main-container">
-           
+        <div id="main-container">            
             <div id="outer-container">
-                {/* <img id="board" src="https://www.shutterstock.com/shutterstock/photos/2172548835/display_1500/stock-vector-vip-poker-luxury-red-gold-chip-rhomboid-frame-shiny-led-light-bulbs-vector-casino-logo-royal-2172548835.jpg" alt="" /> */}
                     <div className='slots'>
                     <div className="reel"></div>
                     <div className="reel"></div>
                     <div className="reel"></div>
                     </div>
-                <button onClick={rollAll} id="roll">Let's Play</button>
-               
- 
-                {/* Display the counters
-                <div className="counters">
-                    <p>Total Attempts: {attempts}</p>
-                    <p>Total Wins: {wins}</p>
-                </div> */}
+                <button onClick={rollAll} id="roll" disabled={isDisabled}>Let's Play</button>      
             </div>
-            <button onClick={reloadMachine} id="reset">Reset</button>
         </div>
     );
 };
