@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/SlotMachineContainer.css';
 import Servicenow from '../utils/servicenow_logo.png';
-import KumoriLogo from '../utils/White logo - no background.png'
+import KumoriLogo from '../utils/kumori_logo.png'
 
 const FooterLogos = () => {
   return (

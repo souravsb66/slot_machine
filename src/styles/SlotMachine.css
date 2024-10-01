@@ -47,22 +47,26 @@
   position: absolute;
   top:3%;
   right:3%;
-  font-size: 18px;
-  padding:10px 30px;
-  border-radius: 10px;
+  font-size: 13px;
+  padding:10px 20px;
+  border-radius: 5px;
   border:none;
-  background-color: rgb(255, 217, 3);
+  background-color: rgb(0, 0, 0);
   color: white;
   cursor: pointer;
 }
-#reset:active {
-  background-color: rgb(250, 217, 29); /* Darker blue on click */
-  box-shadow: 0 5px #ddd203;
-  transform: translateY(4px);
+#reset:hover {
+  background-color: rgb(39, 39, 39);
 }
+#reset:active {
+  /* background-color: rgb(250, 217, 29);
+  box-shadow: 0 5px #ddd203; */
+  transform: scale(0.95);
+}
+
 #roll:active {
-  background-color: rgb(0, 255, 0); /* Darker blue on click */
-  box-shadow: 0 5px rgb(3, 114, 3);
+  /* background-color: rgb(0, 255, 0); */
+  /* box-shadow: 0 5px rgb(3, 114, 3); */
   transform: scale(0.95);
 }
  

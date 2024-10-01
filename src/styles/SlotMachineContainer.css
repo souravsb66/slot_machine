@@ -8,7 +8,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
-    /* background: url(../utils/background.webp) no-repeat center center fixed; */
+    background: url(../utils/background.webp) no-repeat center center fixed;
     background-size: cover;
   }
 
@@ -22,7 +22,7 @@ body {
   }
 
   .slot-machine-container > div {
-    margin: 20px;
+    /* margin: 20px; */
   }
   
   .overlay {
@@ -51,14 +51,17 @@ body {
   
   .logo-container div {
     padding: 5px;
-    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    /* margin: 0 5px; */
   }
   
   .logo-container img {
     width: 150px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
   
   .chips {
@@ -78,21 +81,21 @@ body {
     width: 200px;
     bottom: 10%;
     left: 10px;
-    animation: zoomInOut 4s infinite ease-in-out alternate;
+    animation: zoomInOut 2s infinite ease-in-out alternate;
   }
   
   .chip3 {
     width: 120px;
     top: 20%;
     right: 10%;
-    animation: moveUpDown 4s infinite ease-in-out alternate;
+    animation: zoomInOut 2s infinite ease-in-out alternate;
   }
   
   .chip4 {
     width: 250px;
     bottom: 5%;
     right: 5%;
-    animation: zoomInOut 5s infinite ease-in-out alternate;
+    animation: moveUpDown 4s infinite ease-in-out alternate;
   }
   
   @keyframes moveUpDown {
@@ -113,7 +116,7 @@ body {
       transform: scale(1);
     }
     50% {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
   }
   
