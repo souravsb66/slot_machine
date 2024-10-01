@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 import '../styles/SlotMachine.css'
-import sound3 from "../utils/DRUM ROLL SOUND EFFECT Awarding.mp3";
+import sound3 from "../utils/slot-machine-audio 2 (1).mp3";
 import errorsound from "../utils/buzzer-or-wrong-answer-20582.mp3"
 import winsound from "../utils/winning-218995.mp3"
 import loseSound from "../utils/Lose Sound.mp3"

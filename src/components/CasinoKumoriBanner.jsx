@@ -11,13 +11,13 @@ const CasinoKumoriBanner = () => {
 
         {/* Logo inside the box */}
         <img
-          src={require("../utils/kumori-logo-1.png")} // Adjust the path to your image file accordingly
+          src={require("../utils/kumori_logo.png")} // Adjust the path to your image file accordingly
           alt="Casino Logo"
           className="casino-logo"
         />
 
         {/* Lights around the box */}
-        {[...Array(28)].map((_, index) => (
+        {[...Array(26)].map((_, index) => (
           <div key={index} className="light"></div>
         ))}
       </div>
