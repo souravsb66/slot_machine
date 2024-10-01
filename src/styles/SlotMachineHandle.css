@@ -1,0 +1,59 @@
+.handle-container {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -250px;
+  }
+  
+  /* Slot Machine Handle CSS */
+  .slot-machine-handle {
+    position: relative;
+    top: 20px;
+    left: -5px;
+    width: 12px;
+    height: 100px;
+    background-color: rgb(255, 228, 76); /* Handle bar color */
+    border-radius: 10px;
+    box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.4),
+      2px 2px 10px rgba(0, 0, 0, 0.3); /* 3D effect */
+    transform: rotate(30deg); /* Initially rotated at 30 degrees */
+    transform-origin: bottom center; /* Rotate around the bottom */
+    transition: transform 0.5s ease-in; /* Smooth transition for rotation */
+    cursor: pointer; /* Shows pointer on hover */
+    z-index: -99;
+  }
+  
+  /* The knob at the top of the handle */
+  .slot-machine-handle::before {
+    content: "";
+    position: absolute;
+    top: -30px; /* Positioning knob above the handle */
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #ff4128; /* Bright knob color */
+    /* border: 4px solid #333; Darker border for the knob */
+    border-radius: 50%; /* Makes the knob circular */
+    transform: translateX(-50%);
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3),
+      5px 5px 15px rgba(0, 0, 0, 0.3); /* Adds depth to the knob */
+  }
+  
+  /* Rotating to 60 degrees */
+  .slot-machine-handle.active {
+    transform: rotate(120deg); /* Rotate around the bottom end */
+  }
+  #block {
+    margin-top: 150px;
+    margin-right: -10px;
+    width: 25px;
+    height: 100px;
+    background-color: rgb(255, 228, 76);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: inset 5px -5px 10px rgba(0, 0, 0, 0.3),
+      5px 5px 15px rgba(0, 0, 0, 0.3);
+  }

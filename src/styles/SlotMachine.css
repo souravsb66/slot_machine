@@ -3,8 +3,8 @@
   --icon-height: 118.5px;
   --num-icons: 9;
 }
- 
-#main-container{
+
+#main-container {
   /* background-image: url('https://elements-resized.envatousercontent.com/elements-cover-images/0872f94b-263a-434e-be4d-b830d218db6b?w=2038&cf_fit=scale-down&q=85&format=auto&s=7c0e8ef715659e55173d2c661b0e8b6bd20d48b4a8dc0da3cbd6298caadc62cc'); */
   /* background-size: cover; /* Ensures the background image covers the entire area */
   /* background-position: center;
@@ -17,43 +17,48 @@
   align-items: center;
   position: relative;
   z-index: 10;
+  margin-top: 50px;
 }
 .slots {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   /* /* padding: calc(0.3* var(--icon-width)); */
-   
+
   /* background: linear-gradient(45deg, yellow 0%, lightgray 100%); */
   position: relative;
-  width: calc(4 * var(--icon-width));  
+  width: calc(4 * var(--icon-width));
   height: calc(2 * var(--icon-height));
   padding: 80px 30px 100px 30px;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5) 0%, rgba(211, 211, 211, 0.5) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(211, 211, 211, 0.5) 100%
+  );
   border: 7px solid rgb(255, 228, 76);
   border-radius: 20px;
- 
+
   /* border-top: 1px solid rgba(255, 255, 255, 0.6);
   border-right: 1px solid rgba(255, 255, 255, 0.6); */
- 
+
   /* border-left: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3); */
   border-radius: 20px;
-  margin-top:-50px;
- 
+  margin-top: -50px;
 }
-#reset{
+#reset {
   position: absolute;
-  top:3%;
-  right:3%;
+  top: 3%;
+  right: 3%;
   font-size: 13px;
-  padding:10px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
-  border:none;
+  border: none;
   background-color: rgb(0, 0, 0);
   color: white;
   cursor: pointer;
+  z-index: 99;
 }
 #reset:hover {
   background-color: rgb(39, 39, 39);
@@ -69,9 +74,7 @@
   /* box-shadow: 0 5px rgb(3, 114, 3); */
   transform: scale(0.95);
 }
- 
- 
- 
+
 .slots::before,
 .slots::after {
   content: "";
@@ -80,79 +83,78 @@
   width: 10px;
   height: 2px;
 }
- 
+
 .slots::before {
   left: 0;
   transform: translate(-200%, -50%);
 }
- 
+
 .slots::after {
   right: 0;
   transform: translate(200%, -50%);
 }
- 
+
 .slots.win1 {
   animation: win1 200ms steps(2, end) infinite;
 }
- 
+
 .slots.win2 {
   animation: win2 200ms steps(2, end) infinite;
 }
- 
+
 @keyframes win1 {
   0% {
-      background: linear-gradient(45deg, orange 0%, yellow 100%);
-      box-shadow: 0 0 80px orange;
+    background: linear-gradient(45deg, orange 0%, yellow 100%);
+    box-shadow: 0 0 80px orange;
   }
   100% {
-      background: linear-gradient(45deg, grey 0%, lightgrey 100%);
-      box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+    box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3);
   }
 }
- 
+
 @keyframes win2 {
   0% {
-      /* background: linear-gradient(45deg, lightblue 0%, lightgreen 100%);
+    /* background: linear-gradient(45deg, lightblue 0%, lightgreen 100%);
       box-shadow: 0 0 80px lightgreen; */
-      background: linear-gradient(45deg, orange 0%, yellow 100%);
-      box-shadow: 0 0 80px orange;
+    background: linear-gradient(45deg, orange 0%, yellow 100%);
+    box-shadow: 0 0 80px orange;
   }
   100% {
-      background: linear-gradient(45deg, grey 0%, lightgrey 100%);
-      box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+    box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3);
   }
 }
- 
+
 .reel {
   position: relative;
-  top:2%;
+  top: 2%;
   width: var(--icon-width);
-  height: calc(3* var(--icon-height));
+  height: calc(3 * var(--icon-height));
   border: 2px solid rgba(0, 0, 0, 0.3);
   /* border-radius: 3px; */
   overflow: hidden;
-  background-image: url("../utils/Untitled\ \(1080\ x\ 1920\ px\)\ \(4\).png");
-  background-position:top;
+  background-image: url("../utils/image/slotReel.png");
+  background-position: top;
   background-repeat: repeat-y;
-  background-size:cover;
+  background-size: cover;
   /* margin: 10px; */
 }
-.reel{
+.reel {
   border-top: 7px solid rgb(255, 228, 76);
   border-bottom: 7px solid rgb(255, 228, 76);
 }
-.slots div:nth-child(1){
+.slots div:nth-child(1) {
   border-left: 7px solid rgb(255, 228, 76);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-.slots div:nth-child(3){
+.slots div:nth-child(3) {
   border-right: 7px solid rgb(255, 228, 76);
-  border-top-right-radius: 20px ;
+  border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
- 
- 
+
 .reel::after {
   content: "";
   position: absolute;
@@ -160,85 +162,34 @@
   left: 0;
   width: 0%;
   height: 0%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.4) 100%);
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.4) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
   box-shadow: inset 0 0 6px 2px rgba(0, 0, 0, 0.3);
 }
- 
- 
-#roll{
+
+#roll {
   position: relative;
   font-size: 26px;
-  padding:10px 40px;
+  padding: 10px 40px;
   border-radius: 10px;
-  border:none;
+  border: none;
   margin-top: 20px;
   background-color: rgb(8, 198, 8);
   color: white;
   margin-left: 33%;
-  margin-top:-20% ;
+  margin-top: -20%;
   z-index: 1;
   cursor: pointer;
 }
 
-   /* Container for centering the handle */
-   .handle-container {
-    position:absolute;
-    top:50%;
-    right:30.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -250px;
-  }
+#slot-machine-div {
+  position: relative;
+}
 
-  /* Slot Machine Handle CSS */
-  .slot-machine-handle {
-    position: relative;
-    top:20px;
-    left:-5px;
-    width: 12px;
-    height: 100px;
-    background-color: rgb(255, 228, 76); /* Handle bar color */
-    border-radius: 10px;
-    box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.4), 2px 2px 10px rgba(0, 0, 0, 0.3); /* 3D effect */
-    transform: rotate(30deg); /* Initially rotated at 30 degrees */
-    transform-origin: bottom center; /* Rotate around the bottom */
-    transition: transform 0.5s ease-in;/* Smooth transition for rotation */
-    cursor: pointer; /* Shows pointer on hover */
-    z-index: -99;
-  }
-
-  /* The knob at the top of the handle */
-  .slot-machine-handle::before {
-    content: "";
-    position: absolute;
-    top: -30px; /* Positioning knob above the handle */
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: #00ffff; /* Bright knob color */
-    /* border: 4px solid #333; Darker border for the knob */
-    border-radius: 50%; /* Makes the knob circular */
-    transform: translateX(-50%);
-    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3), 
-                5px 5px 15px rgba(0, 0, 0, 0.3); /* Adds depth to the knob */
-  }
-
-  /* Rotating to 60 degrees */
-  .slot-machine-handle.active {
-    transform: rotate(120deg); /* Rotate around the bottom end */
-  }
-  #block{
-    margin-top: 150px;
-    margin-right: -10px;
-    width:25px;
-    height: 100px;
-    background-color: rgb(255, 228, 76);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: inset 5px -5px 10px rgba(0, 0, 0, 0.3), 
-    5px 5px 15px rgba(0, 0, 0, 0.3); 
-  }
-#outer-container{
+#outer-container {
   display: flex;
 }

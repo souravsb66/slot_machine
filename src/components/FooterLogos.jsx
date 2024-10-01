@@ -1,17 +1,11 @@
 import React from "react";
 import '../styles/SlotMachineContainer.css';
-import Servicenow from '../utils/servicenow_logo.png';
-import KumoriLogo from '../utils/kumori_logo.png'
+import Servicenow from '../utils/image/servicenow_logo.png';
+import KumoriLogo from '../utils/image/kumori_logo.png'
 
 const FooterLogos = () => {
   return (
     <div className="logo-container">
-      <div>
-        <img
-          src={KumoriLogo}
-          alt="Logo 1"
-        />
-      </div>
       <div>
         <img
           src={Servicenow}

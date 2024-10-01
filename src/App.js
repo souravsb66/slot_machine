@@ -1,50 +1,46 @@
-import './App.css';
-import SlotMachine from './components/SlotMachine';
-import SlotMachineContainer from './components/SlotMachineContainer';
-
+import "./App.css";
+import SlotMachineContainer from "./components/SlotMachineContainer";
 
 function App() {
   return (
     <div className="App">
-       <div class="starburst-background">
-        </div> 
+      <div class="starburst-background"></div>
+      {/* <div className="overlay"></div> */}
       <SlotMachineContainer />
-      {/* <SlotMachine /> */}
 
-  <div class="stars">
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-  <div class="star"></div>
-</div>
-
+      <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        {/* <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div> */}
+      </div>
     </div>
   );
 }
