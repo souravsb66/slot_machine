@@ -16,6 +16,7 @@ const SlotMachineContainer = () => {
   return (
     <div className="slot-machine-container">
       <div className="overlay"></div>
+      <div class="starburst-background"></div>
 
       <CasinoKumoriBanner />
       <SlotMachine />

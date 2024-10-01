@@ -5,6 +5,7 @@ import errorsound from "../utils/buzzer-or-wrong-answer-20582.mp3"
 import winsound from "../utils/winning-218995.mp3"
 import loseSound from "../utils/Lose Sound.mp3"
 import buttonClick from "../utils/Spin Button Click Sound.mp3"
+import sound from "../utils/slot-machine-audio 2 (1).mp3"
  
  
 const SlotMachine = () => {
@@ -35,7 +36,7 @@ const SlotMachine = () => {
             const targetBackgroundPositionY = backgroundPositionY + delta * iconHeight;
             const normTargetBackgroundPositionY = targetBackgroundPositionY % (numIcons * iconHeight);
  
-            const audio = new Audio(sound3);
+            const audio = new Audio(sound);
            
             audio.loop = true; // Loop the sound while spinning
             audio.play();
@@ -62,6 +63,15 @@ const SlotMachine = () => {
         const buttonClicked = new Audio(buttonClick);
         buttonClicked.play(); // Play the button click sound
         setIsDisabled(true); // Disable the button initially
+
+            const handle = document.querySelector('.slot-machine-handle');
+            handle.classList.add('active'); // Rotate to 60 degrees
+            
+            // After a delay, rotate back to the initial 30 degrees position
+            setTimeout(() => {
+              handle.classList.remove('active');
+            },500); // 1 second delay before it returns to 30 degrees
+        
    
         // Use a short timeout to ensure the audio plays before starting the roll
         setTimeout(() => {
@@ -112,12 +122,18 @@ const SlotMachine = () => {
     return (
         <div id="main-container">            
             <div id="outer-container">
+                <div>
                     <div className='slots'>
                     <div className="reel"></div>
                     <div className="reel"></div>
                     <div className="reel"></div>
                     </div>
-                <button onClick={rollAll} id="roll" disabled={isDisabled}>Let's Play</button>      
+                <button onClick={rollAll} id="roll" disabled={isDisabled}>Let's Play</button>   
+                </div>
+                <div class="handle-container">
+    <div id="block"></div>
+    <div class="slot-machine-handle" onClick={rollAll}></div>
+  </div>   
             </div>
         </div>
     );

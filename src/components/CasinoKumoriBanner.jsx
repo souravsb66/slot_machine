@@ -4,6 +4,8 @@ import '../styles/CasinoKumoriBanner.css'
 const CasinoKumoriBanner = () => {
   return (
     <div>
+       <div class="starburst-background">
+       </div>
       <div className="casino-box">
         <div className="casino-label">CASINO</div>
 
