@@ -21,9 +21,9 @@ body {
     width: 100vw;
   }
 
-  .slot-machine-container > div {
+  /* .slot-machine-container > div {
     margin: 20px;
-  }
+  } */
   
   /* .overlay {
     position: absolute;
@@ -41,7 +41,7 @@ body {
     justify-content: space-around;
     width: 100%;
     z-index: 100;
-    /* margin-top: 20px; */
+    margin-bottom: 20px;
   }
   
   .logo-container div {
@@ -64,7 +64,7 @@ body {
   }
   
   .chip1 {
-    width: 150px;
+    width: 120px;
     top: 10%;
     left: 5%;
     animation: moveUpDown 4s infinite ease-in-out alternate;
@@ -90,8 +90,15 @@ body {
     right: 5%;
     animation: moveUpDown 4s infinite ease-in-out alternate;
   }
+
+  .chip5 {
+    width: 170px;
+    bottom: 40%;
+    left: 6%;
+    animation: moveUpDown 4s infinite ease-in-out alternate;
+  }
   
-  /* @keyframes moveUpDown {
+  @keyframes moveUpDown {
     0% {
       transform: translateY(0);
     }
@@ -111,4 +118,4 @@ body {
     50% {
       transform: scale(1.1);
     }
-  } */
+  }

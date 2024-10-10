@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/SlotMachine.css";
-import winsound from "../utils/music/winSound.mp3";
+import confetti from 'canvas-confetti';
+import winsound from "../utils/music/cheering_clapping.mp3";
 import loseSound from "../utils/music/losingErrorSound.mp3";
 import buttonClick from "../utils/music/spinButtonClickSound.mp3";
 import slotMachineRollingSound from "../utils/music/slotMachineRollingSound.mp3";
@@ -9,11 +10,14 @@ import SlotMachineHandle from "./SlotMachineHandle";
 const SlotMachine = () => {
   const [indexes, setIndexes] = useState([0, 0, 0]);
   const [rollCount, setRollCount] = useState(0);
+
+  const winProbability = 3;
   const [nextWinningRoll, setNextWinningRoll] = useState(
-    Math.floor(Math.random() * 10) + 1
+    Math.floor(Math.random() * winProbability) + 1
   ); // Randomize the winning roll in a set of 10
+
   const [isDisabled, setIsDisabled] = useState(false);
-  const iconHeight = 118.5;
+  const iconHeight = 140;
   const numIcons = 9;
   const timePerIcon = 100;
 
@@ -21,7 +25,6 @@ const SlotMachine = () => {
   const roll = (reel, offset = 0, target = null) => {
     let delta = (offset + 2) * numIcons + Math.round(Math.random() * numIcons);
 
-    // If the roll is rigged, target a winning combination (7-7-7)
     if (target) {
       const style = getComputedStyle(reel);
       const backgroundPositionY = parseFloat(style["background-position-y"]);
@@ -107,14 +110,21 @@ const SlotMachine = () => {
             const winAudio = new Audio(winsound);
 
             winAudio.play();
+
+            confetti({
+              particleCount: 400,
+              spread: 180,
+              origin: { y: 0.7 }
+            });
+
           } else {
             const loseAudio = new Audio(loseSound);
             loseAudio.play();
           }
 
           // Reseting after 10 rolls
-          if ((prevRollCount + 1) % 10 === 0) {
-            setNextWinningRoll(Math.floor(Math.random() * 10) + 1); // Randomizing the next winning roll
+          if ((prevRollCount + 1) % winProbability === 0) {
+            setNextWinningRoll(Math.floor(Math.random() * winProbability) + 1); // Randomizing the next winning roll
             setRollCount(0); // Reset roll count after every 10 rolls
           }
 
@@ -140,7 +150,7 @@ const SlotMachine = () => {
             Let's Play
           </button>
 
-          <SlotMachineHandle onClick={rollAll} />
+          <SlotMachineHandle onClick={isDisabled ? null : rollAll} />
         </div>
       </div>
     </div>

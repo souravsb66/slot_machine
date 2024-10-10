@@ -4,7 +4,6 @@ import banner from "../utils/image/casinoBanner.png";
 
 const CasinoKumoriBanner = () => {
   return (
-    <div>
       <div className="casino-box">
         
         <div id="casino-banner-div">
@@ -21,7 +20,6 @@ const CasinoKumoriBanner = () => {
           <div key={index} className="light"></div>
         ))} */}
       </div>
-    </div>
   );
 };
 
