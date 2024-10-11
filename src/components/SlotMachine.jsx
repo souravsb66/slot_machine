@@ -11,7 +11,7 @@ const SlotMachine = () => {
   const [indexes, setIndexes] = useState([0, 0, 0]);
   const [rollCount, setRollCount] = useState(0);
 
-  const winProbability = 3;
+  const winProbability = 10;
   const [nextWinningRoll, setNextWinningRoll] = useState(
     Math.floor(Math.random() * winProbability) + 1
   ); // Randomize the winning roll in a set of 10
